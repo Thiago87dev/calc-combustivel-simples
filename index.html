@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo Combustivel</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: rgb(169, 128, 128);
+}
+
+#centro{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 200px;transform: translate(-50%, -50%);
+    width: 300px;
+    height: 200px;
+    background-color: #f2f2f2;
+    text-align: center;
+    font-weight: bold;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+}
+    </style>
+</head>
+<body>
+    <div id="centro">
+        <legend>calculo combustivel</legend>
+        <label for="km">km:</label>
+        <input type="number" name="km" id="km">
+
+        <label for="litros">litros:</label>
+        <input type="number" name="litros" id="litros">
+
+        <button type="submit" id="btn">calcular</button>
+
+        <label for="resultado" id="label-resultado">resultado:</label>
+        <input type="number" name="resultado" id="resultado" disabled>
+    </div>
+
+    <script>
+        var botao = document.querySelector('#btn')
+        botao.addEventListener('click', calcular)
+
+        function calcular(){
+            var km = document.querySelector('#km')
+            var litros = document.querySelector('#litros')
+            var resultado = document.querySelector('#resultado')
+
+            var km = Number(km.value)
+            var litros = Number(litros.value)
+            var calculo = km / litros
+            resultado.value = calculo
+        }
+    </script>
+</body>
+</html>
